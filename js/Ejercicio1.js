@@ -1,24 +1,23 @@
-let capa = document.querySelector("div");
 
+console.log('JS intento ajax Activo.');
 
-capa.addEventListener("mouseover",function(e) {
-  this.className = "conColor";
-});
+document.querySelector('#boton').addEventListener('click', cargaDatos);
 
-capa.addEventListener("mouseout",function(e) {
-  this.className = "sinColor";
-});
-
-function gestionarFicheroXML(xmlDoc){
-	let capaVacia = document.querySelector("#ficheroXML")
-	let librerias = xmlDoc.querySelectorAll("libreria")
-	for(let i=0; i<librerias.length; i++)
-		capaVacia.innerHTML = capaVacia.innerHTML + "<p>" + librerias[i].querySelector("nombre").TextContent + "</p>"
-}
-
-let capa = document.querySelector("div:nth-child(1)") 
-capa.addEventListener("click",CargarFichero);
-function CargarFichero()
+function cargaDatos()
 {
-	loadDocA("leerFicheroXML.xml","xml");
+	//console.log('funcion activa.');
+	const xhttp = new XMLHttpRequest();
+
+	xhttp.open('GET', '../txt/archivo.txt', true);
+
+	xhttp.send();
+
+	xhttp.onreadystatechange = function(){
+		if (this.readyState == 4 && this.status == 200){
+			//console.log(this.responseText);
+			document.querySelector('#respuesta').innerHTML = this.responseText;
+		}
+	}
 }
+
+

@@ -1,0 +1,25 @@
+body
+{
+    background: #EAE3CB;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div, .cont
+{
+    background: blue;
+    height: 500px;
+    width: 500px;
+}
+.conColor
+{
+    background-color: grey;
+}
+
+.sinColor
+{
+    background-color: blue;
+}

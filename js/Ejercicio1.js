@@ -8,7 +8,7 @@ function cargaDatos()
 	//console.log('funcion activa.');
 	const xhttp = new XMLHttpRequest();
 
-	xhttp.open('GET', 'txt/archivo.txt', true);
+	xhttp.open('GET', '../txt/archivo.txt', true);
 
 	xhttp.send();
 
